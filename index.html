@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#160e29">
+  <title>ESCO HUNTZ — Tower Clicker</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Официальный Telegram Mini Apps SDK. Адрес https://telegram.org без /js/... не является SDK. -->
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+<div class="app">
+  <header class="header">
+    <div class="brand">ESCO <span>HUNTZ</span></div>
+    <div id="playerName" class="player">Башня игрока Гость</div>
+    <div class="stats"><div class="coin">🪙 <strong id="coins">0</strong></div><div class="keys">🗝️ <strong id="keys">0</strong></div></div>
+    <div class="energy-heading"><span>⚡ Энергия</span><span id="energyText">1000 / 1000</span></div>
+    <div class="energy-track"><div id="energyFill" class="energy-fill"></div></div>
+  </header>
+  <main>
+    <section id="gameTab" class="tab active" aria-label="Игра">
+      <div id="scene" class="scene" aria-label="Башня"><div class="moon"></div><div class="mountains"></div><div id="tower" class="tower"><div class="foundation">ESCO</div></div><div id="popups" class="popups"></div></div>
+      <div class="game-actions"><div class="tap-info">За тап: <strong id="incomeText">+1</strong> 🪙 · Блоков: <strong id="blocksText">0</strong></div><button id="tapButton" class="tap-button" type="button">ТАП 👆</button><div id="gameMessage" class="message" aria-live="polite">Нажимай и строй башню!</div></div>
+    </section>
+    <section id="boostsTab" class="tab" aria-label="Улучшения" hidden><h2>⚡ Улучшения</h2><article class="card"><h3>Увеличить доход</h3><p>Текущий доход: <b id="incomeLevel">+1</b> за тап</p><button id="buyIncome" type="button">Улучшить · 100 🪙</button></article><article class="card"><h3>Максимум энергии</h3><p>Ёмкость: <b id="capacityText">1000</b></p><button id="buyCapacity" type="button">+50 энергии · 150 🪙</button></article><p id="boostMessage" class="message" aria-live="polite"></p></section>
+    <section id="chestsTab" class="tab" aria-label="Сундуки" hidden><h2>🎁 Сундуки</h2><div class="chest-icon">🎁</div><p>Каждый час — 1 бесплатный ключ. Один ключ открывает один сундук.</p><p>Следующий ключ через: <strong id="keyTimer">—</strong></p><p>Ключей: <strong id="chestKeys">0</strong></p><button id="openChest" type="button">Открыть сундук 🗝️</button><p id="chestMessage" class="message" aria-live="polite"></p></section>
+  </main>
+  <nav class="tabs" aria-label="Разделы"><button class="nav active" data-tab="gameTab" type="button">🏗️<span>Игра</span></button><button class="nav" data-tab="boostsTab" type="button">⚡<span>Улучшения</span></button><button class="nav" data-tab="chestsTab" type="button">🎁<span>Сундуки</span></button></nav>
+</div>
+</body>
+</html>
